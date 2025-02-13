@@ -30,9 +30,19 @@ const Calculator = () => {
         setResult("Error")
       }
     } else {
-      setDisplay((prev) => prev + value)
+      setDisplay((prev) => checkDoubleOperator(prev, value))
     }
   }
+  // Check user click double calculation operator or not if double click then i will take last
+  const checkDoubleOperator = (prev, value) => {
+    const operators = ["+", "-", "*", "/"];
+
+    if (operators.includes(value)) {
+      return prev.replace(/[+\-*/]+$/, "") + value;
+    } else {
+      return prev + value;
+    }
+  };
 
   // Mouse right click options  
   const handleContextMenu = useCallback(
