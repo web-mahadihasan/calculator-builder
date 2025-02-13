@@ -26,7 +26,7 @@ const Navbar = () => {
                 <div>
                     <Link to="/calculator">
                     <span className="bg-blue-500 hover:bg-blue-600 text-white font-normal py-2.5 px-4 rounded transition-colors duration-200">
-                        Get Started
+                        Try it Free
                     </span>
                     </Link>
                 </div>
