@@ -82,7 +82,7 @@ const CalculatorPage = () => {
   return (
     <div className={`min-h-screen flex flex-col `}>
       <div className="flex-grow flex items-center justify-center">
-        <div className="container max-w-5xl mx-auto p-4 ">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
             <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 mb-4 sm:mb-0">
               Build Your Dream Calculator
@@ -104,7 +104,7 @@ const CalculatorPage = () => {
             </div>
           </div>
           <DragDropContext onDragEnd={handleDragEnd}>
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-8 mt-14 justify-between">
               <div className="w-full md:w-1/3">
                 <h2 className="text-2xl font-bold mb-2">Toolbox</h2>
                 <Droppable droppableId="toolbox" direction="horizontal">
@@ -128,7 +128,7 @@ const CalculatorPage = () => {
                   )}
                 </Droppable>
               </div>
-              <div className="w-full md:w-2/3">
+              <div className="w-full md:w-1/2">
                 <h2 className="text-2xl font-bold mb-2">Your Custom Calculator</h2>
                 <Calculator />
               </div>
