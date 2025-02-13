@@ -35,10 +35,10 @@ const Calculator = () => {
   }
   // Check user click double calculation operator or not if double click then i will take last
   const checkDoubleOperator = (prev, value) => {
-    const operators = ["+", "-", "*", "/"];
+    const operators = ["+", "-", "*", "/", "(", ")", "%", "."];
 
     if (operators.includes(value)) {
-      return prev.replace(/[+\-*/]+$/, "") + value;
+      return prev.replace(/[+\-*/()%.]+$/, "") + value;
     } else {
       return prev + value;
     }
