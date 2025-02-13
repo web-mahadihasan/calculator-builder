@@ -11,7 +11,8 @@ const Calculator = () => {
   const [movingMode, setMovingMode] = useState(false)
   const [movingComponentId, setMovingComponentId] = useState(null)
 
-  const handleClick = (value) => {
+  // Handle Result 
+  const handleResult = (value) => {
     if (value === "=") {
       try {
         setResult(eval(display).toString())
@@ -33,6 +34,7 @@ const Calculator = () => {
     }
   }
 
+  // Mouse right click options  
   const handleContextMenu = useCallback(
     (e, id) => {
       e.preventDefault()
@@ -77,6 +79,7 @@ const Calculator = () => {
     [removeComponent],
   )
 
+  // Handle move components 
   const handleMove = (targetIndex) => {
     if (movingMode && movingComponentId) {
       const sourceIndex = components.findIndex((c) => c.id === movingComponentId)
@@ -130,7 +133,7 @@ const Calculator = () => {
                     }}
                   >
                     <button
-                      onClick={() => (movingMode ? handleMove(index) : handleClick(component.value))}
+                      onClick={() => (movingMode ? handleMove(index) : handleResult(component.value))}
                       onContextMenu={(e) => handleContextMenu(e, component.id)}
                       className={`w-full h-16 bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white font-bold rounded-md transition-colors duration-200 ${
                         movingMode ? "cursor-move" : "cursor-pointer"

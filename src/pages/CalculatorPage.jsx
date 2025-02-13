@@ -55,7 +55,7 @@ const CalculatorPage = () => {
     }
   }
 
-
+//   Handle removed 
   const handleDelete = () => {
     if (selectedComponent) {
       const componentToRemove = components.find((c) => c.id === selectedComponent)
@@ -67,6 +67,7 @@ const CalculatorPage = () => {
     }
   }
 
+//   Handle clear all 
   const handleClear = () => {
     clearComponents()
     useStore.setState({ usedComponents: new Set() })
@@ -137,6 +138,7 @@ const CalculatorPage = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-between mt-14">
               <div className="w-full md:w-1/2 lg:w-1/3">
                 <h2 className="text-2xl font-bold mb-2">Toolbox</h2>
+                {/* Dragable Components  */}
                 <Droppable droppableId="toolbox" direction="horizontal">
                   {(provided) => (
                     <div
@@ -164,6 +166,8 @@ const CalculatorPage = () => {
                   )}
                 </Droppable>
               </div>
+
+              {/* Calculator body  */}
               <div className="w-full md:w-1/2">
                 <h2 className="text-2xl font-bold mb-2">Calculator</h2>
                 <Calculator />

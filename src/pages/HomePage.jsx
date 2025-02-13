@@ -53,7 +53,7 @@ const HomePage = () => {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2 }}>
         <Link to="/calculator">
           <span className="bg-blue-500 hover:bg-blue-600 text-white font-normal tracking-wide py-3 px-6 rounded-lg text-xl transition-colors duration-200">
-            Get Started
+            Try it Free
           </span>
         </Link>
       </motion.div>
