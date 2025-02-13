@@ -23,7 +23,8 @@ const HomePage = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="h-full overflow-hidden">
+        <div className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
       <motion.h1
         className="text-4xl md:text-6xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400"
         variants={containerVariants}
@@ -56,6 +57,7 @@ const HomePage = () => {
           </span>
         </Link>
       </motion.div>
+    </div>
     </div>
   )
 }
