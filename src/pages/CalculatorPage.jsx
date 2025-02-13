@@ -100,7 +100,7 @@ const CalculatorPage = () => {
     <div className={`min-h-[calc(100vh-64px)] flex flex-col`}>
       <div className="flex-grow flex items-center justify-center">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center my-4">
             <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 mb-4 sm:mb-0">
               Build Your Dream Calculator
             </h1>
