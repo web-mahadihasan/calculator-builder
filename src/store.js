@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-const useStore = create((set, get) => ({
+const useStore = create((set) => ({
   components: [],
   usedComponents: new Set(),
   history: [],
@@ -48,7 +48,17 @@ const useStore = create((set, get) => ({
       }
     })
   },
-  setMovingMode: (isMoving) => set({ isMovingMode: isMoving }),
+  clearComponents: () => {
+    set((state) => {
+      const newHistory = state.history.slice(0, state.historyIndex + 1)
+      newHistory.push([])
+      return {
+        components: [],
+        history: newHistory,
+        historyIndex: newHistory.length - 1,
+      }
+    })
+  },
   undo: () => {
     set((state) => {
       if (state.historyIndex > 0) {

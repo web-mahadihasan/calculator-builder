@@ -112,12 +112,12 @@ const CalculatorPage = () => {
                     <div
                       {...provided.droppableProps}
                       ref={provided.innerRef}
-                      className="flex flex-wrap bg-gray-100 dark:bg-gray-800 p-4 rounded-lg"
+                      className="grid grid-cols-4 gap-3 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg"
                     >
                       {toolboxComponents.map((component, index) => (
                         <DraggableComponent key={component} id={component} index={index}>
                           <div
-                            className={`w-12 h-12 ${usedComponents.has(component) ? "bg-gray-400 dark:bg-gray-600" : "bg-blue-500 dark:bg-blue-600"} text-white font-bold flex items-center justify-center rounded-md m-1 ${usedComponents.has(component) ? "cursor-not-allowed" : "cursor-move"} transition-colors duration-200`}
+                            className={`w-full h-14 ${usedComponents.has(component) ? "bg-gray-400 dark:bg-gray-600" : "bg-blue-500 dark:bg-blue-600"} text-white font-bold flex items-center justify-center rounded-md m-1 ${usedComponents.has(component) ? "cursor-not-allowed" : "cursor-move"} transition-colors duration-200`}
                           >
                             {component}
                           </div>
